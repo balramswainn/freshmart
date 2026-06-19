@@ -31,9 +31,9 @@ const Shop = () => {
 
 
   return (
-    <div className='max-w-6xl mx-auto flex flex-col lg:gap-6 my-7 lg:mt-28 mt-24 h-max'>
+    <div className='max-w-7xl mx-auto flex flex-col lg:gap-6 my-7 lg:mt-28 mt-24 h-max p-5 md:p-7 lg:p-5'>
       {/* filter section */}
-      <div className='col-span1 p-4 bg-gray-100 h-max rounded-lg fixed w-[280px] mb-10 hidden md:block'>
+      <div className='col-span1 p-4 bg-gray-100 h-max rounded-lg fixed w-[280px] mb-10 hidden lg:block'>        {/* sdsw */}
         <h2 className='text-lg font-semibold mb-4'>Filters</h2>
         <input
           placeholder='Search...'
@@ -64,12 +64,12 @@ const Shop = () => {
         >Reset Filters</button>
       </div>
       {/* Mobile filter */}
-      <div className={`md:hidden bg-gray-100 flex justify-between items-center mx-4 px-4 py-3 ${openFilter ? "rounded-t-md" : "rounded-md"}`}>
+      <div className={`lg:hidden bg-gray-100 flex justify-between items-center mx-4  px-4 py-3  ${openFilter ? "rounded-t-md mb-0" : "rounded-md mb-7"}`}>
         <h1 className='font-semibold text-lg'>Filters</h1>
         <FaFilter onClick={toggleFilter} className='text-gray-80 cursor-pointer' />
       </div>
       {
-        openFilter ? <div className='bg-gray-100 p-4 mx-4 rounded-b-md md:hidden'>
+        openFilter ? <div className='bg-gray-100 p-4 mx-4 mb-7 rounded-b-md  transition-all'>
           <input
             placeholder='Search...'
             className='mb-4 bg-white p-2 w-full rounded-md'
@@ -104,7 +104,7 @@ const Shop = () => {
       {/* products section */}
       {
         filteredProducts.length > 0 ? (
-          <div className='col-span-3 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:ml-[300px] px-4 md:px-0 mt-6 md:mt-0'>
+          <div className='col-span-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:ml-[300px] px-4 md:px-0 mt-6 md:mt-0'>
             {
               filteredProducts.map((product) => {
                 return <ProductCard key={product.id} product={product} />

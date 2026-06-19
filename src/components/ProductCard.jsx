@@ -29,7 +29,7 @@ const ProductCard = ({product}) => {
     <div className='overflow-hidden transition-all hover:shadow-md border border-gray-200 rounded-lg'>
       <div>
         <div className='aspect-square relative bg-gray-200'>
-            <img src={product.image} alt={product.name} className='object-cover w-full h-[195px]'/>
+            <img src={product.image} alt={product.name} className='object-cover w-full '/>
         </div>
         <div className='px-3'>
             <p className='text-sm mt-1 text-gray-500'>{product.category}</p>
