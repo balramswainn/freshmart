@@ -5,13 +5,19 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base:command === 'build' ? '/freshmart/' : '/',
+  base: process.env.NODE_ENV === 'production'
+  ? '/freshmart/'
+  : '/'
 })
 
 // problem after hard refresh url was http://localhost:5173/freshmart/  bcz of base:'/freshmart/'  so lagta tha humara base url ye hai
 
 // fix:- 
-// command === 'build' ? '/freshmart/' : '/',
+
+// export default defineConfig(({ command }) => ({
+//   plugins: [react(), tailwindcss()],
+//   base: command === 'build' ? '/freshmart/' : '/',
+// }))
 
 // or
 
